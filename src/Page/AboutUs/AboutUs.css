@@ -1,0 +1,506 @@
+.about-us {
+  padding-top: 100px;
+  background: #fff;
+}
+
+/* Hero Section */
+.about-hero {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  margin-bottom: 80px;
+}
+
+.about-hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #474a50;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.about-hero-subtitle {
+  font-size: 1.5rem;
+  color: #649D2A;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.about-hero-description {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-hero-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #474a50;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title.center {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title.center::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #649D2A;
+  border-radius: 2px;
+}
+
+/* Mission Section */
+.about-mission {
+  padding: 80px 0;
+  background: #f8f9fa;
+  border-radius: 20px;
+  margin-bottom: 80px;
+}
+
+.mission-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.mission-subtitle {
+  font-size: 1.8rem;
+  color: #649D2A;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.mission-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.mission-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-placeholder {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #649D2A 0%, #4c7420 100%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(100, 157, 42, 0.3);
+}
+
+.placeholder-icon {
+  font-size: 4rem !important;
+  margin-bottom: 20px;
+}
+
+.image-placeholder p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Achievements Section */
+.about-achievements {
+  padding: 80px 0;
+  margin-bottom: 80px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.achievement-card {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #649D2A;
+}
+
+.achievement-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #649D2A;
+  margin-bottom: 15px;
+  line-height: 1;
+}
+
+.achievement-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #474a50;
+  margin-bottom: 10px;
+}
+
+.achievement-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Values Section */
+.about-values {
+  padding: 80px 0;
+  background: #f8f9fa;
+  border-radius: 20px;
+  margin-bottom: 80px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.value-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.value-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #649D2A 0%, #4c7420 100%);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.value-icon svg {
+  font-size: 1.8rem;
+}
+
+.value-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #474a50;
+  margin-bottom: 10px;
+}
+
+.value-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Process Section */
+.about-process {
+  padding: 80px 0;
+  margin-bottom: 80px;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.process-step {
+  text-align: center;
+  padding: 30px 20px;
+  position: relative;
+}
+
+.process-step::after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  right: -15px;
+  width: 30px;
+  height: 2px;
+  background: #649D2A;
+  opacity: 0.3;
+}
+
+.process-step:last-child::after {
+  display: none;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #649D2A 0%, #4c7420 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 20px rgba(100, 157, 42, 0.3);
+}
+
+.step-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #474a50;
+  margin-bottom: 15px;
+}
+
+.step-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Why Choose Us Section */
+.about-why-choose {
+  padding: 80px 0;
+  background: #f8f9fa;
+  border-radius: 20px;
+  margin-bottom: 80px;
+}
+
+.why-choose-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.why-choose-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-choose-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  font-size: 1.1rem;
+  color: #474a50;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.why-choose-list li:last-child {
+  border-bottom: none;
+}
+
+.list-icon {
+  color: #649D2A !important;
+  font-size: 1.5rem !important;
+  flex-shrink: 0;
+}
+
+/* CTA Section */
+.about-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #474a50 0%, #2c2f35 100%);
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.cta-content {
+  text-align: center;
+  color: white;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button.primary {
+  background: #649D2A;
+  color: white;
+  border: 2px solid #649D2A;
+}
+
+.cta-button.primary:hover {
+  background: #4c7420;
+  border-color: #4c7420;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(100, 157, 42, 0.3);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-button.secondary:hover {
+  background: white;
+  color: #474a50;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+  .about-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .mission-content,
+  .why-choose-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .process-step::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-us {
+    padding-top: 80px;
+  }
+  
+  .about-hero {
+    padding: 60px 0;
+    margin-bottom: 60px;
+  }
+  
+  .about-hero-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .achievements-grid,
+  .values-grid,
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .value-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .image-placeholder {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-button {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .achievement-number {
+    font-size: 2.5rem;
+  }
+  
+  .step-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+  
+  .image-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .placeholder-icon {
+    font-size: 3rem !important;
+  }
+}

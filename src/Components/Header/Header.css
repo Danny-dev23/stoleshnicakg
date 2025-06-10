@@ -1,0 +1,198 @@
+.header {
+  background: #F3F3F3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5px;
+
+  z-index: 10;
+}
+
+.menu__box {
+  display: flex;
+  align-items: center;
+}
+
+.menu__item {
+  color: black;
+  margin: 0px 15px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  background: transparent;
+  border-radius: 15px;
+}
+
+.menu__item:hover {
+  background: #649d2a;
+  color: white;
+}
+
+.span-slide {
+  color: #649d2a;
+}
+
+.block-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-head {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+}
+
+.header-btn {
+  border: 2px solid #649d2a;
+  background: transparent;
+  color: black;
+  padding: 5px 30px;
+  border-radius: 10px;
+}
+
+.header-btn:hover {
+  background: #649d2a;
+  color: white;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+#menu__toggle {
+  display: none;
+}
+
+.menu__item-btn {
+  display: none;
+}
+
+.menu__box > li {
+  list-style: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  #menu__toggle {
+    opacity: 0;
+    display: block;
+  }
+  .header-btn {
+    display: none;
+  }
+  .header {
+    justify-content: center;
+  }
+  /* стилизуем кнопку */
+  .menu__btn {
+    display: flex; /* используем flex для центрирования содержимого */
+    align-items: center; /* центрируем содержимое кнопки */
+    position: fixed;
+    top: 35px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 20;
+  }
+
+  /* добавляем "гамбургер" */
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: 0.3s;
+  }
+  .menu__btn > span::before {
+    content: "";
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: "";
+    top: 8px;
+  }
+
+  /* контейнер меню */
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #474a50;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* элементы меню */
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin: 10px 0px;
+  }
+  .menu__item:hover {
+    background-color: #cfd8dc;
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+
+  .header {
+    position: fixed;
+    z-index: 40;
+    width: 100%;
+    left: 0;
+  }
+  .menu__item-btn {
+    display: block;
+    padding: 12px 24px;
+    color: #649d2a;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+    background: white;
+    border: 2px solid white;
+    margin: 10px 0;
+    border-radius: 10px;
+  }
+}

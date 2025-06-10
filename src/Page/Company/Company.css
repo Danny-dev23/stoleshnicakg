@@ -1,0 +1,483 @@
+.company {
+  margin-top: 80px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.company::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23649D2A" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%23649D2A" opacity="0.05"/><circle cx="50" cy="10" r="1" fill="%23649D2A" opacity="0.05"/><circle cx="10" cy="60" r="1" fill="%23649D2A" opacity="0.05"/><circle cx="90" cy="40" r="1" fill="%23649D2A" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.company-content {
+  position: relative;
+  z-index: 2;
+}
+
+.company-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.company-head {
+  font-size: 3rem;
+  color: #474a50;
+  font-weight: 900;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.company-head::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #649D2A 0%, #4c7420 100%);
+  border-radius: 2px;
+}
+
+.company-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Reviews Slider */
+.reviews-slider-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 80px;
+}
+
+.reviews-swiper {
+  padding: 40px 0;
+  overflow: visible;
+}
+
+.review-slide {
+  background: white;
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.review-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #649D2A 0%, #4c7420 100%);
+}
+
+.review-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.quote-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #649D2A 0%, #4c7420 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 10px 20px rgba(100, 157, 42, 0.3);
+}
+
+.quote-icon svg {
+  font-size: 1.8rem;
+}
+
+.review-rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star-icon {
+  color: #ffc107;
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(255, 193, 7, 0.3));
+}
+
+.review-text {
+  margin-bottom: 40px;
+}
+
+.review-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  font-style: italic;
+  margin: 0;
+  position: relative;
+}
+
+.review-footer {
+  border-top: 1px solid #e9ecef;
+  padding-top: 30px;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.reviewer-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #649D2A;
+  box-shadow: 0 8px 20px rgba(100, 157, 42, 0.3);
+  flex-shrink: 0;
+}
+
+.reviewer-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-icon {
+  width: 100%;
+  height: 100%;
+  background: #649D2A;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.reviewer-details {
+  flex: 1;
+}
+
+.reviewer-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #474a50;
+  margin: 0 0 5px 0;
+}
+
+.reviewer-position {
+  font-size: 1rem;
+  color: #649D2A;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.project-name {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.project-date {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* Custom Navigation */
+.swiper-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border: 2px solid #649D2A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #649D2A;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background: #649D2A;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(100, 157, 42, 0.3);
+}
+
+/* Pagination Styles */
+.reviews-swiper .swiper-pagination {
+  position: static;
+  margin-top: 30px;
+}
+
+.reviews-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.reviews-swiper .swiper-pagination-bullet-active {
+  background: #649D2A;
+  transform: scale(1.2);
+}
+
+/* Statistics Section */
+.company-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.company-stats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #649D2A 0%, #4c7420 100%);
+}
+
+.stat-item {
+  text-align: center;
+  position: relative;
+}
+
+.stat-item::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60px;
+  background: #e9ecef;
+}
+
+.stat-item:last-child::after {
+  display: none;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #649D2A;
+  margin-bottom: 10px;
+  line-height: 1;
+  background: linear-gradient(135deg, #649D2A 0%, #4c7420 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .company-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .stat-item::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .company {
+    padding: 60px 0;
+    margin-top: 60px;
+  }
+  
+  .company-head {
+    font-size: 2.2rem;
+  }
+  
+  .company-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .review-slide {
+    padding: 30px 25px;
+  }
+  
+  .review-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .review-text p {
+    font-size: 1.1rem;
+  }
+  
+  .reviewer-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .reviewer-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .company-stats {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 25px;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .swiper-navigation {
+    gap: 15px;
+  }
+  
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .company-head {
+    font-size: 1.8rem;
+  }
+  
+  .review-slide {
+    padding: 25px 20px;
+  }
+  
+  .quote-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .quote-icon svg {
+    font-size: 1.5rem;
+  }
+  
+  .star-icon {
+    font-size: 1.3rem;
+  }
+  
+  .review-text p {
+    font-size: 1rem;
+  }
+  
+  .reviewer-name {
+    font-size: 1.1rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.company-header,
+.reviews-slider-container,
+.company-stats {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.company-header {
+  animation-delay: 0.1s;
+}
+
+.reviews-slider-container {
+  animation-delay: 0.3s;
+}
+
+.company-stats {
+  animation-delay: 0.5s;
+}
+
+/* Hover effects for better interactivity */
+.stat-item:hover .stat-number {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(100, 157, 42, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  margin: -20px;
+  transition: all 0.3s ease;
+}

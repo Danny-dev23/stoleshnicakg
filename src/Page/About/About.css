@@ -1,0 +1,137 @@
+.about-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.about-head {
+    width: 50%;
+    margin-top: 60px;
+    border-bottom: 2px solid #474a50;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    color: #474a50;
+}
+
+.about-card {
+    text-align: center;
+    width: 320px;
+    padding: 25px;
+    height: 200px;
+    margin: 10px 5px;
+    border: 2px solid #474a50;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.9); 
+}
+
+.about-card__head {
+    font-size: 21px;
+    color: #474a50;
+    font-weight: 900;
+    margin: 10px 0px 5px 0px;
+}
+
+.about-card__description {
+    color:  #777;
+}
+
+.features {
+    padding: 120px 0;
+    background: #fff;
+  }
+  
+  .features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .material-icons > svg {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    color: #649D2A;
+  }
+  
+  .feature-card {
+    text-align: left;
+    padding: 30px 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+  }
+
+  /* .feature-card:hover > .feature-icon > .number {
+    scale: 1.3;
+    transition: all 0.9s ease;
+  }
+  .feature-card:hover > h3 {
+    scale: 1.3;
+    transition: all 0.3s ease;
+  } */
+
+
+  
+  .feature-icon {
+    position: relative;
+    text-align: right;
+  }
+  
+  .material-icons {
+    font-size: 48px;
+    color: #2c2c2c;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .number {
+    position: absolute;
+    left: 10px;
+    top: -15px;
+    z-index: 1;
+    font-size: 4rem;
+    font-weight: 500;
+    color: black;
+    opacity: 0.2;
+  }
+  
+  .feature-card h3 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+    font-weight: 500;
+    text-align: left;
+  }
+  
+  .feature-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 992px) {
+    .features-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .features-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+@media screen and (max-width: 768px) {
+    .about-head {
+        width: 100%;
+    }
+}
