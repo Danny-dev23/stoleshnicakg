@@ -2,11 +2,6 @@ import React, { useMemo, useState } from "react";
 import { staron, grandex } from "../../Assets/Product/Product";
 import {
   Container,
-  MenuItem,
-  Select,
-  TextField,
-  InputLabel,
-  FormControl,
   Pagination,
   Typography,
   Slider,
@@ -15,17 +10,23 @@ import "./Shop.css";
 import Card from "../../Components/Card/Card";
 
 const Shop = () => {
-  const [selectedBrand, setSelectedBrand] = useState(""); // Новое состояние для бренда
+  const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
   const [priceRange, setPriceRange] = useState([0, 330]);
+  
+  // Mobile filter states
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [mobileBrandSectionOpen, setMobileBrandSectionOpen] = useState(false);
+  const [mobileCategorySectionOpen, setMobileCategorySectionOpen] = useState(false);
+  const [mobilePriceSectionOpen, setMobilePriceSectionOpen] = useState(false);
 
   // Получаем текущий массив продуктов в зависимости от выбранного бренда
   const getCurrentProducts = () => {
     if (selectedBrand === "staron") return staron;
     if (selectedBrand === "grandex") return grandex;
-    return [...staron, ...grandex]; // Все продукты, если бренд не выбран
+    return [...staron, ...grandex];
   };
 
   const currentProducts = getCurrentProducts();
@@ -61,7 +62,7 @@ const Shop = () => {
   // Обработчик изменения бренда
   const handleBrandChange = (brand) => {
     setSelectedBrand(brand);
-    setSelectedCategory(""); // Сбрасываем категорию при смене бренда
+    setSelectedCategory("");
     setCurrentPage(1);
   };
 
@@ -78,6 +79,13 @@ const Shop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Функция для получения названия бренда
+  const getBrandDisplayName = (brand) => {
+    if (brand === "staron") return "Staron";
+    if (brand === "grandex") return "Grandex";
+    return "Все категории";
+  };
+
   return (
     <div>
       <Container>
@@ -87,7 +95,126 @@ const Shop = () => {
           сочетает в себе прочность, элегантность и функциональность.
         </p>
 
-        {/* Фильтры */}
+        {/* Mobile Filters */}
+        <div className="mobile-filters">
+          <button 
+            className={`mobile-filter-toggle ${mobileFiltersOpen ? 'active' : ''}`}
+            onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
+          >
+            Фильтры и сортировка
+          </button>
+          
+          <div className={`mobile-filters-content ${mobileFiltersOpen ? 'active' : ''}`}>
+            {/* Results Count */}
+            <div className="filter-results-count">
+              Найдено товаров: {filteredProducts.length}
+            </div>
+
+            {/* Brand Filter */}
+            <div className="mobile-filter-section">
+              <button 
+                className={`mobile-filter-header ${mobileBrandSectionOpen ? 'active' : ''}`}
+                onClick={() => setMobileBrandSectionOpen(!mobileBrandSectionOpen)}
+              >
+                Бренды
+              </button>
+              <div className={`mobile-filter-body ${mobileBrandSectionOpen ? 'active' : ''}`}>
+                <div className="mobile-category-grid">
+                  <div
+                    className={`mobile-category-item ${selectedBrand === "" ? 'active' : ''}`}
+                    onClick={() => handleBrandChange("")}
+                  >
+                    Все категории
+                  </div>
+                  <div
+                    className={`mobile-category-item ${selectedBrand === "staron" ? 'active' : ''}`}
+                    onClick={() => handleBrandChange("staron")}
+                  >
+                    Staron
+                    <span className="category-item__text-span">Премиум</span>
+                  </div>
+                  <div
+                    className={`mobile-category-item ${selectedBrand === "grandex" ? 'active' : ''}`}
+                    onClick={() => handleBrandChange("grandex")}
+                  >
+                    Grandex
+                    <span className="category-item__text-span">Элит</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Category Filter */}
+            {selectedBrand && (
+              <div className="mobile-filter-section">
+                <button 
+                  className={`mobile-filter-header ${mobileCategorySectionOpen ? 'active' : ''}`}
+                  onClick={() => setMobileCategorySectionOpen(!mobileCategorySectionOpen)}
+                >
+                  Подкатегории {getBrandDisplayName(selectedBrand)}
+                </button>
+                <div className={`mobile-filter-body ${mobileCategorySectionOpen ? 'active' : ''}`}>
+                  <div className="mobile-category-grid">
+                    <div
+                      className={`mobile-category-item ${selectedCategory === "" ? 'active' : ''}`}
+                      onClick={() => {
+                        setSelectedCategory("");
+                        setCurrentPage(1);
+                      }}
+                    >
+                      Все подкатегории
+                    </div>
+                    {categories.map((cat) => (
+                      <div
+                        key={cat}
+                        className={`mobile-category-item ${selectedCategory === cat ? 'active' : ''}`}
+                        onClick={() => {
+                          setSelectedCategory(cat);
+                          setCurrentPage(1);
+                        }}
+                      >
+                        {cat}
+                        {(cat === "Supreme" ||
+                          cat === "Metallic" ||
+                          cat === "Sanded" ||
+                          cat === "Pebble" ||
+                          cat === "Quarry" ||
+                          cat === "Tempest") && (
+                          <span className="category-item__text-span">Хит</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Price Filter */}
+            <div className="mobile-filter-section">
+              <button 
+                className={`mobile-filter-header ${mobilePriceSectionOpen ? 'active' : ''}`}
+                onClick={() => setMobilePriceSectionOpen(!mobilePriceSectionOpen)}
+              >
+                Фильтр по цене
+              </button>
+              <div className={`mobile-filter-body ${mobilePriceSectionOpen ? 'active' : ''}`}>
+                <div className="mobile-price-display">
+                  Цена: {priceRange[0]}$ - {priceRange[1]}$
+                </div>
+                <Slider
+                  value={priceRange}
+                  onChange={handlePriceChange}
+                  valueLabelDisplay="auto"
+                  min={minProductPrice}
+                  max={maxProductPrice}
+                  sx={{ width: "100%" }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Filters */}
         <div className="card-box">
           <div className="filters">
             {/* Фильтр по брендам */}
@@ -131,11 +258,11 @@ const Shop = () => {
               </div>
             </div>
 
-            {/* Фильтр по подкатегориям (показывается только если выбран бренд) */}
+            {/* Фильтр по подкатегориям */}
             {selectedBrand && (
               <div className="filters-category" style={{ marginTop: "20px" }}>
                 <h3 style={{ marginBottom: "15px", color: "#474a50" }}>
-                  Подкатегории {selectedBrand === "staron" ? "Staron" : "Grandex"}
+                  Подкатегории {getBrandDisplayName(selectedBrand)}
                 </h3>
                 <div
                   className="category-item"
@@ -150,7 +277,7 @@ const Shop = () => {
                 >
                   <p className="category-item__text">Все подкатегории</p>
                 </div>
-                {categories.map((cat, index) => (
+                {categories.map((cat) => (
                   <div
                     key={cat}
                     className="category-item"
