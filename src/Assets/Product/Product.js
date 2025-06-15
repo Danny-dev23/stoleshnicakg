@@ -749,4 +749,4 @@ const staron = [
   },
 ];
 
-export default products;
+export default staron;
