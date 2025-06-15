@@ -759,7 +759,7 @@ const grandex = [
     image:
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/70b854f7-5704-4aea-8ae6-2206fec21979-200x200.jpg",
   }
-  }
+  
 ];
 
 // Объединяем все продукты для совместимости с существующим кодом
