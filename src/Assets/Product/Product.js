@@ -697,7 +697,13 @@ const staron = [
 
 const grandex = [
   {
-    
+        id: 77,
+    name: "Ноутбук",
+    color: "Igneous FI187",
+    category: "Tempest",
+     price: "330$",
+    image:
+      "https://territoriyakomforta.kg"
   }
 ]
  
