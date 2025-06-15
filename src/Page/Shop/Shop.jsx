@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import products from "../../Assets/Product/Product";
+import { staron, grandex } from "../../Assets/Product/Product";
 import {
   Container,
   MenuItem,
@@ -15,15 +15,26 @@ import "./Shop.css";
 import Card from "../../Components/Card/Card";
 
 const Shop = () => {
+  const [selectedBrand, setSelectedBrand] = useState(""); // Новое состояние для бренда
   const [selectedCategory, setSelectedCategory] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
   const [priceRange, setPriceRange] = useState([0, 330]);
-  // Получаем уникальные категории
-  const categories = [...new Set(products.map((p) => p.category))];
+
+  // Получаем текущий массив продуктов в зависимости от выбранного бренда
+  const getCurrentProducts = () => {
+    if (selectedBrand === "staron") return staron;
+    if (selectedBrand === "grandex") return grandex;
+    return [...staron, ...grandex]; // Все продукты, если бренд не выбран
+  };
+
+  const currentProducts = getCurrentProducts();
+
+  // Получаем уникальные категории для текущего бренда
+  const categories = [...new Set(currentProducts.map((p) => p.category))];
 
   // Фильтрация
-  const filteredProducts = products.filter((product) => {
+  const filteredProducts = currentProducts.filter((product) => {
     const productPrice = parseInt(product.price.replace("$", ""));
     const matchCategory = selectedCategory
       ? product.category === selectedCategory
@@ -34,17 +45,24 @@ const Shop = () => {
   });
 
   const { minProductPrice, maxProductPrice } = useMemo(() => {
-    const prices = products.map((p) => parseInt(p.price.replace("$", "")));
+    const prices = currentProducts.map((p) => parseInt(p.price.replace("$", "")));
     return {
       minProductPrice: Math.min(...prices),
       maxProductPrice: Math.max(...prices),
     };
-  }, []);
+  }, [currentProducts]);
 
   // Обработчик изменения диапазона цен
   const handlePriceChange = (event, newValue) => {
     setPriceRange(newValue);
-    setCurrentPage(1); // сбрасываем страницу при изменении фильтра
+    setCurrentPage(1);
+  };
+
+  // Обработчик изменения бренда
+  const handleBrandChange = (brand) => {
+    setSelectedBrand(brand);
+    setSelectedCategory(""); // Сбрасываем категорию при смене бренда
+    setCurrentPage(1);
   };
 
   // Пагинация
@@ -57,7 +75,7 @@ const Shop = () => {
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
-    window.scrollTo({ top: 0, behavior: "smooth" }); // прокрутка наверх
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -72,48 +90,98 @@ const Shop = () => {
         {/* Фильтры */}
         <div className="card-box">
           <div className="filters">
+            {/* Фильтр по брендам */}
             <div className="filters-category">
+              <h3 style={{ marginBottom: "15px", color: "#474a50" }}>Бренды</h3>
               <div
                 className="category-item"
-                onClick={() => {
-                  setSelectedCategory("");
-                  setCurrentPage(1);
-                }}
+                onClick={() => handleBrandChange("")}
                 style={{
-                  color: selectedCategory === "" ? "#649d2a" : "inherit",
+                  color: selectedBrand === "" ? "#649d2a" : "inherit",
+                  fontWeight: selectedBrand === "" ? "bold" : "normal",
                 }}
               >
-                Все категории
+                <p className="category-item__text">Все категории</p>
               </div>
-              {categories.map((cat, index) => (
+              <div
+                className="category-item"
+                onClick={() => handleBrandChange("staron")}
+                style={{
+                  color: selectedBrand === "staron" ? "#649d2a" : "inherit",
+                  fontWeight: selectedBrand === "staron" ? "bold" : "normal",
+                }}
+              >
+                <p className="category-item__text">
+                  Staron
+                  <span className="category-item__text-span">Премиум</span>
+                </p>
+              </div>
+              <div
+                className="category-item"
+                onClick={() => handleBrandChange("grandex")}
+                style={{
+                  color: selectedBrand === "grandex" ? "#649d2a" : "inherit",
+                  fontWeight: selectedBrand === "grandex" ? "bold" : "normal",
+                }}
+              >
+                <p className="category-item__text">
+                  Grandex
+                  <span className="category-item__text-span">Элит</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Фильтр по подкатегориям (показывается только если выбран бренд) */}
+            {selectedBrand && (
+              <div className="filters-category" style={{ marginTop: "20px" }}>
+                <h3 style={{ marginBottom: "15px", color: "#474a50" }}>
+                  Подкатегории {selectedBrand === "staron" ? "Staron" : "Grandex"}
+                </h3>
                 <div
-                  key={cat}
                   className="category-item"
                   onClick={() => {
-                    setSelectedCategory(cat);
+                    setSelectedCategory("");
                     setCurrentPage(1);
                   }}
                   style={{
-                    color: selectedCategory === cat ? "#649d2a" : "inherit",
+                    color: selectedCategory === "" ? "#649d2a" : "inherit",
+                    fontWeight: selectedCategory === "" ? "bold" : "normal",
                   }}
                 >
-                  <p className="category-item__text">
-                    {cat}{" "}
-                    {(cat === "Supreme" ||
-                      cat === "Metallic" ||
-                      cat === "Sanded" ||
-                      cat === "Pebble" ||
-                      cat === "Quarry") && (
-                      <span className="category-item__text-span">Хит</span>
-                    )}
-                  </p>
+                  <p className="category-item__text">Все подкатегории</p>
                 </div>
-              ))}
-            </div>
+                {categories.map((cat, index) => (
+                  <div
+                    key={cat}
+                    className="category-item"
+                    onClick={() => {
+                      setSelectedCategory(cat);
+                      setCurrentPage(1);
+                    }}
+                    style={{
+                      color: selectedCategory === cat ? "#649d2a" : "inherit",
+                      fontWeight: selectedCategory === cat ? "bold" : "normal",
+                    }}
+                  >
+                    <p className="category-item__text">
+                      {cat}{" "}
+                      {(cat === "Supreme" ||
+                        cat === "Metallic" ||
+                        cat === "Sanded" ||
+                        cat === "Pebble" ||
+                        cat === "Quarry" ||
+                        cat === "Tempest") && (
+                        <span className="category-item__text-span">Хит</span>
+                      )}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Фильтр по цене */}
             <div className="filters-price">
-              <p className="filter-price__title">
-                Фильтр по цене
-              </p>
+              <p className="filter-price__title">Фильтр по цене</p>
               <Typography gutterBottom>
                 Цена: {priceRange[0]}$ - {priceRange[1]}$
               </Typography>
@@ -127,6 +195,7 @@ const Shop = () => {
               />
             </div>
           </div>
+
           <div className="card-list">
             <div className="card-list__items">
               <Card products={paginatedProducts} />
@@ -149,35 +218,9 @@ const Shop = () => {
             )}
           </div>
         </div>
-
-        {/* Пагинация */}
       </Container>
     </div>
   );
 };
 
 export default Shop;
-
-// useEffect(() => {
-//   // Добавляем Google Tag Manager скрипт
-//   const script = document.createElement("script");
-//   script.async = true;
-//   script.src = "https://www.googletagmanager.com/gtag/js?id=AW-974307140";
-//   document.head.appendChild(script);
-
-//   // Инициализация gtag
-//   const gtagScript = document.createElement("script");
-//   gtagScript.innerHTML = `
-//     window.dataLayer = window.dataLayer || [];
-//     function gtag(){dataLayer.push(arguments);}
-//     gtag('js', new Date());
-//     gtag('config', 'AW-974307140');
-//   `;
-//   document.head.appendChild(gtagScript);
-
-//   // Очистка скриптов при размонтировании компонента
-//   return () => {
-//     document.head.removeChild(script);
-//     document.head.removeChild(gtagScript);
-//   };
-// }, []);
