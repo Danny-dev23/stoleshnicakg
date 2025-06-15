@@ -369,7 +369,7 @@ const staron = [
     image:
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/c8393024-ae0a-49f7-90f7-21e2bce7bfcc-200x200.jpg",
   },
-  {
+   {
     id: 42,
     name: "Ноутбук",
     color: "Tundra ST482",
@@ -691,79 +691,9 @@ const staron = [
     category: "Tempest",
      price: "330$",
     image:
-      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/7117866e-8229-4062-ac6b-1671056299f9-200x200.jpg",
-  },
-  {
-    id: 78,
-    name: "Ноутбук",
-    color: "Meteor FM111",
-    category: "Tempest",
-     price: "330$",
-    image:
-      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/08553c26-f5cb-4ed4-85bf-c828b449c37f-200x200.jpg",
-  },
-  {
-    id: 79,
-    name: "Ноутбук",
-    color: "Peak FP100",
-    category: "Tempest",
-     price: "330$",
-    image:
-      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/6jh0q9ivmjjcw39nea01st2e40anzfzf-200x200.png",
-  },
-  {
-    id: 80,
-    name: "Ноутбук",
-    color: "Pinnacle FP112",
-    category: "Tempest",
-     price: "330$",
-    image:
-      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/pinacle-200x200.jpg",
-  },
-  {
-    id: 81,
-    name: "Ноутбук",
-    color: "Prairie FP142",
-    category: "Tempest",
-     price: "330$",
-    image:
-      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/3325a08b-c030-4ebc-af28-07188bc6f9eb-200x200.jpg",
-  },
-  {
-    id: 82,
-    name: "Ноутбук",
-    color: "Rattan FR124",
-    category: "Tempest",
-     price: "330$",
-    image:
-      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/3c3d9c67-6355-4e17-a82c-e797bb726e31-200x200.jpg",
-  },
-  {
-    id: 83,
-    name: "Ноутбук",
-    color: "Shell FS115",
-    category: "Tempest",
-     price: "330$",
-    image:
-      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/70b854f7-5704-4aea-8ae6-2206fec21979-200x200.jpg",
+      "https://territoriyakomforta.kg
   }
 ];
 
 const grandex = [
-  {
-        id: 83,
-    name: "Ноутбук",
-    color: "Shell FS115",
-    category: "Tempest",
-     price: "330$",
-    image:
-      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/70b854f7-5704-4aea-8ae6-2206fec21979-200x200.jpg",
-  }
-  
-];
-
-// Объединяем все продукты для совместимости с существующим кодом
-const products = [...staron, ...grandex];
-
-export { staron, grandex };
-export default products;
+ 
