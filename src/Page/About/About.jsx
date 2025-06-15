@@ -1,10 +1,4 @@
 import React from "react";
-import resilienceImg from "../../Assets/Images/resilience.png";
-import ultravioletImg from "../../Assets/Images/ultraviolet.png";
-import repairImg from "../../Assets/Images/repair.png";
-import wipeImg from "../../Assets/Images/wipe.png";
-import thermoImg from "../../Assets/Images/thermo.png";
-import ecoImg from "../../Assets/Images/eco.png";
 import "./About.css";
 import { Container } from "@mui/material";
 

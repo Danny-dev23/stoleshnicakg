@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Company.css";
 import { Container } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";

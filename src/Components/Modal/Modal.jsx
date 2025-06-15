@@ -114,7 +114,7 @@ ${blocks
   };
 
   return (
-    <Modal open={open} onClose={handleClose}>
+    <Modal open={open} onClose={handleModalClose}>
       <Box sx={style}>
         <div className="modal-content">
           <h2>Расчет стоимости</h2>
@@ -211,7 +211,7 @@ ${blocks
             </Button>
             <Button
               variant="outlined"
-              onClick={handleClose}
+              onClick={handleModalClose}
               disabled={isLoading}
             >
               Закрыть
