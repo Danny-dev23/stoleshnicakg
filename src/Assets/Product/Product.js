@@ -749,4 +749,16 @@ const staron = [
   },
 ];
 
-export default products;
+const grandex = [
+  {
+    id: 83,
+    name: "Ноутбук",
+    color: "",
+    category: "",
+    price: "",
+    image: ""
+  }
+]
+
+expoert default grandex;
+export default staron;
