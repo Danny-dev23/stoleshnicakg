@@ -1,4 +1,4 @@
-const products = [
+const staron = [
   {
     id: 1,
     name: "Ноутбук",
