@@ -368,8 +368,11 @@ const staron = [
      price: "240$",
     image:
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/c8393024-ae0a-49f7-90f7-21e2bce7bfcc-200x200.jpg",
-  },
-   {
+  }
+];
+
+const grandex = [
+  {
     id: 42,
     name: "Ноутбук",
     color: "Tundra ST482",
@@ -693,17 +696,16 @@ const staron = [
     image:
       "https://territoriyakomforta.kg",
   }
-];
+]
 
 const grandex = [
   {
-    id: 77,
+      id: 77,
     name: "Ноутбук",
     color: "Igneous FI187",
     category: "Tempest",
      price: "330$",
     image:
-      "https://territoriyakomforta.kg",
+      "https://territoriyakomforta.kg
   }
 ]
- 
