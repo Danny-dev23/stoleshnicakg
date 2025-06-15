@@ -21,10 +21,13 @@ const style = {
 const CalculateModal = ({ open, handleClose, product }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [blocks, setBlocks] = useState([{ id: 1, width: "", length: "" }]);
 
   const resetForm = () => {
     setBlocks([{ id: 1, width: "", length: "" }]);
+    setPhoneNumber("");
   };
+
   const handleModalClose = () => {
     resetForm();
     handleClose();
@@ -72,8 +75,7 @@ ${blocks
       }
 
       alert("Заявка успешно отправлена!");
-      resetForm();
-      handleClose();
+      handleModalClose();
     } catch (error) {
       console.error("Ошибка:", error);
       alert("Произошла ошибка при отправке заявки");
@@ -92,8 +94,6 @@ ${blocks
 
     sendToTelegram();
   };
-
-  const [blocks, setBlocks] = useState([{ id: 1, width: "", length: "" }]);
 
   const handleAddBlock = () => {
     setBlocks([...blocks, { id: blocks.length + 1, width: "", length: "" }]);
