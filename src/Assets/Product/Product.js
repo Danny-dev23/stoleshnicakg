@@ -691,7 +691,7 @@ const staron = [
     category: "Tempest",
      price: "330$",
     image:
-      "https://territoriyakomforta.kg
+      "https://territoriyakomforta.kg"
   }
 ];
 
