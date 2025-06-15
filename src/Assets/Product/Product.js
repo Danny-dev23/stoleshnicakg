@@ -1,4 +1,4 @@
-const staron = [
+const products = [
   {
     id: 1,
     name: "Ноутбук",
@@ -368,10 +368,7 @@ const staron = [
      price: "240$",
     image:
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/c8393024-ae0a-49f7-90f7-21e2bce7bfcc-200x200.jpg",
-  }
-];
-
-const grandex = [
+  },
   {
     id: 42,
     name: "Ноутбук",
@@ -607,7 +604,7 @@ const grandex = [
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/a8c96fb8-afa7-4449-bea6-f2af540f929f-200x200.jpg",
   },
   {
-    id: 68,
+    id: 67,
     name: "Ноутбук",
     color: "Bronzestar FB154",
     category: "Tempest",
@@ -616,7 +613,7 @@ const grandex = [
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/b3662ad7-60ad-4a41-9f4a-621a624ba65a-200x200.jpg",
   },
   {
-    id: 69,
+    id: 68,
     name: "Ноутбук",
     color: "Caviar FC188",
     category: "Tempest",
@@ -625,7 +622,7 @@ const grandex = [
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/46e28af7-8c56-4c0e-ad76-c2be4688ccec-200x200.jpg",
   },
   {
-    id: 70,
+    id: 69,
     name: "Ноутбук",
     color: "Cinnamon FC153",
     category: "Tempest",
@@ -634,7 +631,7 @@ const grandex = [
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/fc153_cinnamon-200x200.jpg",
   },
   {
-    id: 71,
+    id: 70,
     name: "Ноутбук",
     color: "Coffee Bean FC158",
     category: "Tempest",
@@ -643,7 +640,7 @@ const grandex = [
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/ba8b52f8-bf18-414f-af35-1fdccafcb0fc-200x200.jpg",
   },
   {
-    id: 72,
+    id: 71,
     name: "Ноутбук",
     color: "Dazzle FD191",
     category: "Tempest",
@@ -652,7 +649,7 @@ const grandex = [
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/w5eqtko2jqq6th0t2fs4v0cjwjwp2m1b-200x200.jpg",
   },
   {
-    id: 73,
+    id: 72,
     name: "Ноутбук",
     color: "Genesis FG174",
     category: "Tempest",
@@ -661,7 +658,7 @@ const grandex = [
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/631f461c-eb12-43ab-81f0-059ba4205eb9-200x200.jpg",
   },
   {
-    id: 74,
+    id: 73,
     name: "Ноутбук",
     color: "Glimmer FG144",
     category: "Tempest",
@@ -670,7 +667,7 @@ const grandex = [
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/37a2c823-02b4-4146-8559-9d34a7ee46f4-200x200.jpg",
   },
   {
-    id: 75,
+    id: 74,
     name: "Ноутбук",
     color: "Gold Leaf FG196",
     category: "Tempest",
@@ -679,7 +676,7 @@ const grandex = [
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/7f1760d7-e12a-4cd0-9c3b-221811e2cb89-200x200.jpg",
   },
   {
-    id: 76,
+    id: 75,
     name: "Ноутбук",
     color: "Horizon FH114",
     category: "Tempest",
@@ -688,13 +685,68 @@ const grandex = [
       "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/ec6ef1d1-4e2f-4cf0-845b-757141f824e7-200x200.jpg",
   },
   {
-    id: 77,
+    id: 76,
     name: "Ноутбук",
     color: "Igneous FI187",
     category: "Tempest",
      price: "330$",
     image:
-      "https://territoriyakomforta.kg",
-  }
-]
+      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/7117866e-8229-4062-ac6b-1671056299f9-200x200.jpg",
+  },
+  {
+    id: 77,
+    name: "Ноутбук",
+    color: "Meteor FM111",
+    category: "Tempest",
+     price: "330$",
+    image:
+      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/08553c26-f5cb-4ed4-85bf-c828b449c37f-200x200.jpg",
+  },
+  {
+    id: 78,
+    name: "Ноутбук",
+    color: "Peak FP100",
+    category: "Tempest",
+     price: "330$",
+    image:
+      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/6jh0q9ivmjjcw39nea01st2e40anzfzf-200x200.png",
+  },
+  {
+    id: 79,
+    name: "Ноутбук",
+    color: "Pinnacle FP112",
+    category: "Tempest",
+     price: "330$",
+    image:
+      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/pinacle-200x200.jpg",
+  },
+  {
+    id: 80,
+    name: "Ноутбук",
+    color: "Prairie FP142",
+    category: "Tempest",
+     price: "330$",
+    image:
+      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/3325a08b-c030-4ebc-af28-07188bc6f9eb-200x200.jpg",
+  },
+  {
+    id: 81,
+    name: "Ноутбук",
+    color: "Rattan FR124",
+    category: "Tempest",
+     price: "330$",
+    image:
+      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/3c3d9c67-6355-4e17-a82c-e797bb726e31-200x200.jpg",
+  },
+  {
+    id: 82,
+    name: "Ноутбук",
+    color: "Shell FS115",
+    category: "Tempest",
+     price: "330$",
+    image:
+      "https://territoriyakomforta.kg/image/cache/catalog/%D0%9A%D0%90%D0%9C%D0%95%D0%9D%D0%AC/70b854f7-5704-4aea-8ae6-2206fec21979-200x200.jpg",
+  },
+];
 
+export default products;
